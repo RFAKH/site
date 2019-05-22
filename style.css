@@ -1,0 +1,390 @@
+:root{
+	--color-text: lightgreen;
+	--color-background: peachpuff;
+}
+
+@keyframes resolve{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes resolveSub{
+	0% {
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #AD8059;
+	overflow-x: hidden;
+}
+
+.header{
+	background-image: linear-gradient(
+		to right bottom, 
+		rgba(143,130,107,0.5),
+		rgba(143,130,107,0.7)),
+		url(img/background.jpg);
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	margin: none;
+	padding: none;
+}
+
+.headerText {
+	margin: 0 0 0 0;
+	margin-bottom: 5rem;
+	padding-top: 16rem;
+	font-size: 10rem;
+	text-align: center;
+	font-family: Poppins;
+	color: var(--color-text);
+	animation-name: resolve;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+
+}
+
+.headerSubtext {
+	margin: 0 0 0 0;
+	margin-top: 5rem;
+	font-size: 5rem;
+	text-align: center;
+	font-family: Poppins;
+	color: var(--color-text);
+	animation-name: resolveSub;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
+}
+
+
+.buttonHeader{
+	text-align: center;
+}
+
+.buttonHeaderButton{
+	background-color: yellow;
+	width: 30rem;
+	height: 7.5rem;
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-align: center;
+	margin-top: 2rem;
+	border-radius: 500rem;
+}
+
+.buttonHeaderText{
+	text-transform: uppercase;
+	color: black;
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-weight: bold;
+	font-family: Poppins;
+}
+
+.galleryItem{
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+}
+
+.galleryImage{
+	width: 70rem;
+	height: 52.5rem;
+	margin:auto;
+	filter: blur(5px);
+	transition: 0.4s;
+	border-radius: 2rem;
+}
+
+.galleryImage:hover {
+	filter: blur(0px);
+	transition: 0.4s;
+}
+
+.galleryText{
+	opacity: 1;
+	font-size: 1.5rem;
+	text-align: center;
+	font-family: Poppins;
+	position: relative;
+	margin: auto;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	width: 70rem;
+}
+
+
+.card{
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card-side{
+	height: 500px;
+	width: 300px;
+	font-size: 15px; 
+	color: white;
+	backface-visibility: hidden;
+	box-shadow: 0 1.5rem 4rem rgba(0,0,0,.15);
+}
+
+.card-side-front{
+	background-color: teal;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transition: all 1s;
+}
+
+.card-side-back{
+	background-color: purple;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transform: rotateY(-180deg);
+	transition: all 1s;
+}
+
+.card:hover .card-side-front{
+	transform: rotateY(-180deg);
+}
+
+.card:hover .card-side-back{
+	transform: rotateY(-360deg);
+}
+
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	max-width: 100rem;
+	padding-top: 5rem;
+}
+
+#chugoku{
+	background-image: url("img/Peach.png");
+	background-size: cover; 	
+	text-align: center;
+}
+
+#chugokuText{
+	background-color: rgba(255,166,77);
+	color: white;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+#shikoku{
+	background-image: url("img/Citrus.png");
+	background-size: cover; 	
+	text-align: center;
+}
+
+#shikokuText{
+	background-color: rgba(255,231,92);
+	color: rgba(87,31,1);
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+
+#hokkaido{
+	background-image: url("img/Milk.png");
+	background-size: cover; 	
+	text-align: center;
+}
+
+#hokkaidoText{
+	background-color: rgba(122,168,82+);
+	color: rgba(87,31,1);
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+#kansai{
+	background-image: url("img/Streetdango3.png");
+	background-size: cover; 	
+	text-align: center;
+}
+
+#kansaiText{
+	background-color: rgba(255,185,87);
+	color: rgba(87,31,1);
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+
+.navigationCheckbox{
+	display: none;
+}
+
+.navigationButton{
+	background-color: red;
+	height: 7rem;
+	width: 7rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6rem;
+	right: 6rem;
+	z-index: 2000;
+	box-shadow: 0 1rem 3rem rgba(255,255,255,0.1);
+	text-align: center;
+	cursor: pointer;
+}
+
+.navigationIcon{
+	position: relative;
+	margin-top: 3.5rem;
+}
+
+.navigationIcon::before, .navigationIcon::after{
+	content: "";
+}
+
+.navigationIcon::before{
+	position: absolute;
+	top: -.8rem;
+	left: 0;
+}
+
+.navigationIcon::after{
+	position: absolute;
+	top: .8rem;
+	left: 0;
+}
+
+.navigationIcon, .navigationIcon:before, .navigationIcon:after {
+	width: 3rem;
+	height: 2px;
+	background-color: #333;
+	display: inline-block;
+	transition: all .2s;
+}
+
+.navigationButton:hover .navigationIcon::before{
+	top: -1rem;
+}
+
+.navigationButton:hover .navigationIcon::after{
+	top: 1rem;
+}
+
+.navigationCheckbox:checked + .navigationButton .navigationIcon{
+	background-color: transparent;
+}
+
+.navigationCheckbox:checked + .navigationButton .navigationIcon::before{
+	transform: rotate(180deg);
+	top: 0;
+}
+
+.navigationCheckbox:checked + .navigationButton .navigationIcon::after{
+	transform: rotate(-180deg);
+	top: 0;
+}
+
+.navigationList{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	list-style: none;
+	text-align: center;
+	width: 100%;
+}
+
+.navigationItem{
+	margin: 1rem;
+}
+
+.navigationNav{
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+	opacity: 0;
+	width: 100%;
+	transition: all .8s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+
+.navigationBackground{
+	height: 6rem;
+	width: 6rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6.5rem;
+	right: 6.5rem;
+	background-image: radial-gradient(
+		rgba(255, 255, 255, 1) ,
+		rgba(255, 255, 255, 1)) ;
+	z-index: 1000;
+	transition: transform .8s;
+	transform: scale(80);
+	opacity: 0;
+}
+
+.navigationLink, .navigationLink:link, .navigationLink:visited{
+	display: inline-block;
+	font-size: 3rem;
+	font-weight: 300;
+	padding: 1rem 2rem;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+	background-size: 240%;
+	transition: all .4s;
+}
+
+.navigationLink:hover, .navigationLink:active{
+	background-position: 100%;
+	color: rgba(41, 152, 255, 1);
+	transform: translateX(1rem);
+}
+
+.navigationCheckbox:checked~.navigationBackground{
+	transform: scale(80);
+}
+
+.navigationCheckbox:checked~.navigationNav{
+    opacity: 1;
+    width: 100%;
+}
+
+.navigationCheckbox:checked~.navigationBackground{
+    opacity: 1;
+    width: 100%;
+}
+*/
+
+
+
+
+
+
